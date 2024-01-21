@@ -1,16 +1,17 @@
-## Wstęp
 
- Drogi Uczestniku,
+## Introduction
 
-Cieszę się, że zdecydowałeś sie wziąć udział w szkoleniu :)
+Dear Participant,
 
-W celu weryfikacji środowiska na którym będziemy pracować w trakcie warsztatów poproszę Cię o upewnienie się, że spełniasz wymagania dotyczące narzędzi (*Wymagania*).
+I'm glad you've decided to take part in the workshop :)
 
-## Wymagania
+To verify the development environment, please make sure you meet the following tool requirements (_Requirements_).
 
-### Narzędzia
+## Requirements
 
-Proszę o przygotowanie komputera z systemem Windows (rekomendowany system Windows 10 lub 11). Proszę o instalację:
+### Tools
+
+Please prepare a machine/laptop with the Windows operating system (Windows 10 or 11 recommended) or MacOS. Please install:
 
 - **Visual Studio Code** - https://code.visualstudio.com/Download
 
@@ -18,33 +19,33 @@ Proszę o przygotowanie komputera z systemem Windows (rekomendowany system Windo
 
 - **Docker** - https://docs.docker.com/docker-for-windows/install/
 
-- Przeglądarka **Chrome** lub **FireFox** w najnowszej wersji
+- **Chrome** or **FireFox** browser in the latest version
 
 - **k6 Browser Recorder Plugin:**
 	- **Chrome**: https://chrome.google.com/webstore/detail/k6-browser-recorder/phjdhndljphphehjpgbmpocddnnmdbda?hl=en
-	lub
+	or
 	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/k6-browser-recorder/
 
 - **GIT** - https://git-scm.com/downloads
 
-### Rejestracje kont:
+### Account Registrations:
 
-- **k6 Cloud** - utworz darmowe konto na k6 cloud: https://k6.io/cloud/
+- **k6 Cloud** - create a free account on k6 cloud: https://k6.io/cloud/
 
-- **Reserved** - utworz konto na https://www.reserved.com/pl/pl/ - tylko podstawowa rejestracja
+- **Reserved** - create an account at [Reserved](https://www.reserved.com/pl/pl/) - only basic registration
 
-### Weryfikacja środowiska
+### Environment Verification
 - **k6**
-	- Wpisz w konsoli: k6. Upewnij się, że została podana informacja o dostępnych komendach k6
+	- Type in the console: `k6`. Make sure that information about available k6 commands is provided.
 - **Docker**
-	- Wpisz w konsoli: `docker -v` .Upewnij się, iż została podana informacja o wersji zainstalowanego Dockera.
+	- Type in the console: `docker -v`. Make sure that information about the installed Docker version is provided.
 	
-- Pobierz dockerowe obrazy następującymi komendami:
-	- `docker pull grafana/grafana`
-	- `docker pull influxdb:1.8`
+- Download Docker images with the following commands:
+	-  	 `docker pull grafana/grafana`
+	-   `docker pull influxdb:1.8`
 
-## Notatki
+## Notes
 Google Docs: https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing
 
-## W razie problemów
-Pisz na mój adres email: *t.klepacki@wp.pl*
+## In Case of any issues
+Contact me at my email address: *t.klepacki@wp.pl*
