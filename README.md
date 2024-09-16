@@ -21,7 +21,7 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 
 - **Chrome** or **FireFox** browser in the latest version
 
-- **k6 Browser Recorder Plugin:**
+- **Grafana k6 Browser Recorder Plugin:**
 	- **Chrome**: https://chromewebstore.google.com/detail/grafana-k6-browser-record/fbanjfonbcedhifbgikmjelkkckhhidl
 	or
 	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
@@ -30,9 +30,9 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 
 ### Account Registrations:
 
-- **k6 Cloud** - create a free account on k6 cloud: https://k6.io/cloud/
+- **Grafana Cloud k6** - create a free account on k6 cloud: https://grafana.com/products/cloud/k6/
 
-- **Reserved** - create an account at [Reserved](https://www.reserved.com/pl/pl/) - only basic registration
+- **Reserved** - create an account at [Reserved](https://www.reserved.com/gb/en/) - only basic registration
 
 ### Environment Verification
 - **k6**
