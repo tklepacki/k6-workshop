@@ -22,9 +22,9 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 - **Chrome** or **FireFox** browser in the latest version
 
 - **k6 Browser Recorder Plugin:**
-	- **Chrome**: https://chrome.google.com/webstore/detail/k6-browser-recorder/phjdhndljphphehjpgbmpocddnnmdbda?hl=en
+	- **Chrome**: https://chromewebstore.google.com/detail/grafana-k6-browser-record/fbanjfonbcedhifbgikmjelkkckhhidl
 	or
-	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/k6-browser-recorder/
+	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
 
 - **GIT** - https://git-scm.com/downloads
 
