@@ -45,7 +45,7 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 	-   `docker pull influxdb:1.8`
 
 ## Notes
-Google Docs: https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing
+Google Docs: [https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing](https://docs.google.com/document/d/1seoGdGYMqO7gnHAoMI2hwYhK9yTIo3c4flpdJWXZvag/edit?usp=sharing)
 
 ## In Case of any issues
 Contact me at my email address: *t.klepacki@wp.pl*
