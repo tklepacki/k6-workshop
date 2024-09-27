@@ -26,7 +26,7 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 	or
 	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
 
-- **GIT** - https://git-scm.com/downloads
+- **GIT** - https://git-scm.com/download/win NOTE: During the installation, in the "Adjusting your PATH environment" window, select the option: "Use Git and optional Unix tools from the Windows Command Prompt" (the last radio button)"
 
 ### Account Registrations:
 
@@ -41,8 +41,14 @@ Please prepare a machine/laptop with the Windows operating system (Windows 10 or
 	- Type in the console: `docker -v`. Make sure that information about the installed Docker version is provided.
 	
 - Download Docker images with the following commands:
-	-  	 `docker pull grafana/grafana`
+	-   `docker pull grafana/grafana`
 	-   `docker pull influxdb:1.8`
+   
+ - Clone the repository: git clone https://github.com/tklepacki/k6-workshop.git
+Go to the repository folder and make sure the project has been downloaded.
+
+- Open Visual Studio Code -> File -> Open Folder (Select cloned project folder)
+Make sure that all project files are visible in VSC File Explorer
 
 ## Notes
 Google Docs: [https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing](https://docs.google.com/document/d/1seoGdGYMqO7gnHAoMI2hwYhK9yTIo3c4flpdJWXZvag/edit?usp=sharing)
