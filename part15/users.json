@@ -1,0 +1,9 @@
+{
+  "users": [
+    { "email": "performancetests0001@wp.pl", "password": "Qweasd12@", "firstName": "Tomsz", "id": "1"},
+    { "email": "performancetests0001@wp.pl", "password": "Qweasd12@", "firstName": "Tomsz", "id": "2"},
+    { "email": "performancetests0001@wp.pl", "password": "Qweasd12@", "firstName": "Tomsz", "id": "3"},
+    { "email": "performancetests0001@wp.pl", "password": "Qweasd12@", "firstName": "Tomsz", "id": "4"},
+    { "email": "performancetests0001@wp.pl", "password": "Qweasd12@", "firstName": "Tomsz", "id": "5"}
+  ]
+}
