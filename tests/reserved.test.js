@@ -1,5 +1,6 @@
 import { group } from 'k6'
 import http from 'k6/http'
+import * as helper from '../tests/helper.js'
 
 export const options = {
   cloud: {
@@ -40,18 +41,20 @@ export function reserved_login() {
     url: 'https://www.reserved.com/proxydirectory/549238991762/pageInfo'
   }
 
-  let postCustomerLoginRequest = {
-    method: 'POST',
-    url: 'https://www.reserved.com/gb/en/ajx/customer/login/referer/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/uenc/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/?lpp_new_login',
-    body: {
-      'login[username]': 'performancetests0001@wp.pl',
-      'login[password]': 'Qweasd12@',
-      'login[remember_me]': '1',
-      form_key: 'zzHK37SOqj4iVrPD',
-    },
-    params: {
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+  function postCustomerLoginRequest(form_key) {
+    return {
+      method: 'POST',
+      url: 'https://www.reserved.com/gb/en/ajx/customer/login/referer/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/uenc/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/?lpp_new_login',
+      body: {
+        'login[username]': 'performancetests0001@wp.pl',
+        'login[password]': 'Qweasd12@',
+        'login[remember_me]': '1',
+        form_key: form_key,
+      },
+      params: {
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        }
       }
     }
   }
@@ -62,7 +65,8 @@ export function reserved_login() {
   }
 
   group('Login Page - https://www.reserved.com/gb/en/customer/account/login/#login', function () {
-    http.get(getCustomerAccountLoginPageRequest.url)
+    let getCustomerAccountLoginPageResponse = http.get(getCustomerAccountLoginPageRequest.url)
+    let formKey = helper.getFormKey(getCustomerAccountLoginPageResponse)
 
     http.get(getVarnishAjaxNewIndexRequest.url)
 
@@ -70,7 +74,7 @@ export function reserved_login() {
 
     http.post(postPageInfoRequest.url, null)
 
-    http.post(postCustomerLoginRequest.url, postCustomerLoginRequest.body, postCustomerLoginRequest.params)
+    http.post(postCustomerLoginRequest().url, postCustomerLoginRequest(formKey).body, postCustomerLoginRequest().params)
   })
 
   group('Main Page After User Log In - https://www.reserved.com/gb/en/', function () {
