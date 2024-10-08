@@ -1,6 +1,11 @@
 import { group, check } from 'k6'
 import http from 'k6/http'
 import * as helper from '../tests/helper.js'
+import { SharedArray} from "k6/data"
+
+const userData = new SharedArray("Test User Data", function () {
+  return JSON.parse(open('users.json')).users;
+})
 
 export const options = {
   cloud: {
@@ -26,6 +31,8 @@ export const options = {
 
 export function reserved_login() {
   let randomUserScenario = helper.getRandomNumber()
+  let randomUserNumber = helper.getRandomUser()
+
   console.log(randomUserScenario)
   let getCustomerAccountLoginPageRequest = {
     method: 'GET',
@@ -72,8 +79,8 @@ export function reserved_login() {
       method: 'POST',
       url: 'https://www.reserved.com/gb/en/ajx/customer/login/referer/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/uenc/aHR0cHM6Ly93d3cucmVzZXJ2ZWQuY29tL2diL2VuLw,,/?lpp_new_login',
       body: {
-        'login[username]': 'performancetests0001@wp.pl',
-        'login[password]': 'Qweasd12@',
+        'login[username]': userData[randomUserNumber].email,
+        'login[password]': userData[randomUserNumber].password,
         'login[remember_me]': '1',
         form_key: form_key,
       },
@@ -134,13 +141,13 @@ export function reserved_login() {
     let getVarnishAjaxNewIndexResponse = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
     check(getVarnishAjaxNewIndexResponse, {
       "GET - Varnish New Index Status was 200": (r) => r.status === 200,
-      "User has been logged in succesfully": (r) => r.body.includes('Tomasz') === true
+      "User has been logged in succesfully": (r) => r.body.includes(userData[randomUserNumber].firstName) === true
     })
 
     let getVarnishAjaxIndexResponse = http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
     check(getVarnishAjaxIndexResponse, {
       "GET - Varnish Index Status was 200": (r) => r.status === 200,
-      "User has been logged in succesfully": (r) => r.body.includes('Tomasz') === true
+      "User has been logged in succesfully": (r) => r.body.includes(userData[randomUserNumber].firstName) === true
     })
 
     let postPageInfoResponse = http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
