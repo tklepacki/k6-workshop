@@ -1,4 +1,4 @@
-import { group } from 'k6'
+import { group, check } from 'k6'
 import http from 'k6/http'
 import * as helper from '../tests/helper.js'
 
@@ -94,25 +94,39 @@ export function reserved_login() {
 
   group('Login Page - https://www.reserved.com/gb/en/customer/account/login/#login', function () {
     let getCustomerAccountLoginPageResponse = http.get(getCustomerAccountLoginPageRequest.url, getCustomerAccountLoginPageRequest.params)
+    check(getCustomerAccountLoginPageResponse, { "GET - Customer Account Login Page Status was 200": (r) => r.status === 200 })
     let formKey = helper.getFormKey(getCustomerAccountLoginPageResponse)
 
-    http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
+    let getVarnishAjaxNewIndexResponse = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
+    check(getVarnishAjaxNewIndexResponse, { "GET - Varnish New Index Status was 200": (r) => r.status === 200 })
 
-    http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+    let getVarnishAjaxIndexResponse = http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+    check(getVarnishAjaxIndexResponse, { "GET - Varnish Index Status was 200": (r) => r.status === 200 })
 
-    http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
+    let postPageInfoResponse = http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
+    check(postPageInfoResponse, { "POST - Page Info Status was 301": (r) => r.status === 301 })
 
-    http.post(postCustomerLoginRequest().url, postCustomerLoginRequest(formKey).body, postCustomerLoginRequest().params)
+    let postCustomerLoginResponse = http.post(postCustomerLoginRequest().url, postCustomerLoginRequest(formKey).body, postCustomerLoginRequest().params)
+    check(postCustomerLoginResponse, { "POST - Customer Login Status was 200": (r) => r.status === 200 })
   })
 
   group('Main Page After User Log In - https://www.reserved.com/gb/en/', function () {
-    http.get(getMainPageRequest.url, getMainPageRequest.params)
+    let getMainPageResponse = http.get(getMainPageRequest.url, getMainPageRequest.params)
+    check(getMainPageResponse, { "GET - Main Page Status was 200": (r) => r.status === 200 })
 
-    let response = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
-    console.log(response.body)
+    let getVarnishAjaxNewIndexResponse = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
+    check(getVarnishAjaxNewIndexResponse, {
+      "GET - Varnish New Index Status was 200": (r) => r.status === 200,
+      "User has been logged in succesfully": (r) => r.body.includes('Tomasz') === true
+    })
 
-    http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+    let getVarnishAjaxIndexResponse = http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+    check(getVarnishAjaxIndexResponse, {
+      "GET - Varnish Index Status was 200": (r) => r.status === 200,
+      "User has been logged in succesfully": (r) => r.body.includes('Tomasz') === true
+    })
 
-    http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
+    let postPageInfoResponse = http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
+    check(postPageInfoResponse, { "GET - Page Info Status was 301": (r) => r.status === 301 })
   })
 }
