@@ -18,6 +18,10 @@ export const options = {
       exec: 'reserved_login',
     },
   },
+  thresholds: {
+    http_req_failed: ['rate<0.01'],
+    http_req_duration: ['p(95)<5000']
+  }
 }
 
 export function reserved_login() {
