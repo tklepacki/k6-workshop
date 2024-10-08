@@ -25,6 +25,8 @@ export const options = {
 }
 
 export function reserved_login() {
+  let randomUserScenario = helper.getRandomNumber()
+  console.log(randomUserScenario)
   let getCustomerAccountLoginPageRequest = {
     method: 'GET',
     url: 'https://www.reserved.com/gb/en/customer/account/login/',
@@ -96,6 +98,17 @@ export function reserved_login() {
     }
   }
 
+  let getCheckoutCartPageRequest = {
+    method: 'GET',
+    url: 'https://www.reserved.com/gb/en/checkout/cart/',
+    params: {
+      tags: {
+        name: 'RE - Get Checkout Cart Page',
+      },
+    }
+  }
+
+  console.log("User Login Scenario")
   group('Login Page - https://www.reserved.com/gb/en/customer/account/login/#login', function () {
     let getCustomerAccountLoginPageResponse = http.get(getCustomerAccountLoginPageRequest.url, getCustomerAccountLoginPageRequest.params)
     check(getCustomerAccountLoginPageResponse, { "GET - Customer Account Login Page Status was 200": (r) => r.status === 200 })
@@ -132,5 +145,20 @@ export function reserved_login() {
 
     let postPageInfoResponse = http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
     check(postPageInfoResponse, { "GET - Page Info Status was 301": (r) => r.status === 301 })
+
+    if (randomUserScenario <= 19.00) {
+      console.log("Checkout Cart Visit Scenario")
+      group("Checkout Cart Page - https://www.reserved.com/gb/en/checkout/cart/", function () {
+        let getCheckoutCartPageResponse = http.get(getCheckoutCartPageRequest.url, getCheckoutCartPageRequest.params);
+        check(getCheckoutCartPageResponse, { 'GET - Checkout Cart Page status was 200': (r) => r.status == 200 });
+
+        let getVarnishAjaxNewIndexResponse = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
+        check(getVarnishAjaxNewIndexResponse, { 'GET - Varnish New Index status was 200': (r) => r.status == 200 });
+
+        let getVarnishAjaxIndexResponse = http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+        check(getVarnishAjaxIndexResponse, { 'GET - Varnish Index status was 200': (r) => r.status == 200 });
+      });
+    }
+
   })
 }
