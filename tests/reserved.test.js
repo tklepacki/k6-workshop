@@ -74,9 +74,10 @@ export function reserved_login() {
   })
 
   group('Main Page After User Log In - https://www.reserved.com/gb/en/', function () {
-    http.get(getMainPageRequest)
+    http.get(getMainPageRequest.url)
 
-    http.get(getVarnishAjaxNewIndexRequest.url)
+    let response = http.get(getVarnishAjaxNewIndexRequest.url)
+    console.log(response.body)
 
     http.get(getVarnishAjaxIndexRequest.url)
 
