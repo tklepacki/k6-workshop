@@ -11,16 +11,23 @@ export const options = {
       executor: 'ramping-vus',
       gracefulStop: '30s',
       stages: [
-        { target: 5, duration: '30s' },
-        { target: 5, duration: '30s' },
+        { target: 3, duration: '30s' },
+        { target: 3, duration: '30s' },
         { target: 0, duration: '30s' },
       ],
       exec: 'reservedLogin',
     },
   },
+  thresholds: {
+    http_req_failed: ['rate<0.01'],
+    http_req_duration: ['avg<5000']
+  }
 }
 
 export function reservedLogin() {
+  let randomUserScenario = helper.getRandomNumber()
+
+  console.log("Random Number: " + randomUserScenario)
   let getCustomerAccountLoginPageRequest = {
     method: 'GET',
     url: 'https://www.reserved.com/gb/en/customer/account/login/',
@@ -92,6 +99,17 @@ export function reservedLogin() {
     }
   }
 
+  let getCheckoutCartPageRequest = {
+    method: 'GET',
+    url: 'https://www.reserved.com/gb/en/checkout/cart/',
+    params: {
+      tags: {
+        name: 'RE - Get Checkout Cart Page',
+      },
+    }
+  }
+
+  console.log("User Login Scenario")
   group('Login Page - https://www.reserved.com/gb/en/customer/account/login/#login', function () {
     let getCustomerAccountLoginPageResponse = http.get(getCustomerAccountLoginPageRequest.url, getCustomerAccountLoginPageRequest.params);
     check(getCustomerAccountLoginPageResponse, { 'GET - Customer Account Login Page status was 200': (r) => r.status == 200 });
@@ -129,4 +147,18 @@ export function reservedLogin() {
     let postPageInfoResponse = http.post(postPageInfoRequest.url, null, postPageInfoRequest.params)
     check(postPageInfoResponse, { 'POST - Page Info status was 200': (r) => r.status == 200 });
   })
+
+  if (randomUserScenario <= 19.00) {
+  console.log("Checkout Cart Visit Scenario")
+  group("Checkout Cart Page - https://www.reserved.com/gb/en/checkout/cart/", function () {
+    let getCheckoutCartPageResponse = http.get(getCheckoutCartPageRequest.url, getCheckoutCartPageRequest.params);
+    check(getCheckoutCartPageResponse, { 'GET - Checkout Cart Page status was 200': (r) => r.status == 200 });
+
+    let getVarnishAjaxNewIndexResponse = http.get(getVarnishAjaxNewIndexRequest.url, getVarnishAjaxNewIndexRequest.params)
+    check(getVarnishAjaxNewIndexResponse, { 'GET - Varnish New Index status was 200': (r) => r.status == 200 });
+
+    let getVarnishAjaxIndexResponse = http.get(getVarnishAjaxIndexRequest.url, getVarnishAjaxIndexRequest.params)
+    check(getVarnishAjaxIndexResponse, { 'GET - Varnish Index status was 200': (r) => r.status == 200 });
+  });
+  }
 }
