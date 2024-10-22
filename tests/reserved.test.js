@@ -1,6 +1,6 @@
 import { group, check } from 'k6'
 import http from 'k6/http'
-import * as helper from './helper-11.js';
+import * as helper from './helper.js';
 
 export const options = {
   cloud: {
