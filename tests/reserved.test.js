@@ -33,7 +33,7 @@ export function reservedLogin() {
     let randomUserScenario = helper.getRandomNumber()
     let randomUserNumber = helper.getRandomUserNumber()
 
-    console.log(userData[randomUserNumber].firstName)
+    console.log(userData[randomUserNumber].id)
 
     console.log("Random Number: " + randomUserScenario)
     let getCustomerAccountLoginPageRequest = {
