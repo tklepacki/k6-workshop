@@ -6,8 +6,8 @@ Cieszę się, że zdecydowałeś się wziąć udział w warsztatach :)
 
 Aby zweryfikować środowisko programistyczne, upewnij się, że spełniasz poniższe wymagania dotyczące narzędzi (Wymagania).
 
-##Wymagania
-###Narzędzia
+## Wymagania
+### Narzędzia
 Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lub 11) lub MacOS. Zainstaluj następujące oprogramowanie:
 
 - **Visual Studio Code** - https://code.visualstudio.com/Download
@@ -18,38 +18,39 @@ Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lu
 
 - Przeglądarkę **Chrome** lub **Firefox** w najnowszej wersji
 
-Wtyczkę Grafana k6 Browser Recorder:
 
-Chrome: Pobierz
-Firefox: Pobierz
-GIT - Pobierz
+- Wtyczkę **Grafana k6 Browser Recorder**:
+  - **Chrome**: https://chromewebstore.google.com/detail/grafana-k6-browser-record/fbanjfonbcedhifbgikmjelkkckhhidl
+	or
+	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
+- **GIT** - https://git-scm.com/download/win
 UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz opcję: "Use Git and optional Unix tools from the Windows Command Prompt" (ostatni przycisk radiowy).
 
-Rejestracja kont
-Grafana Cloud k6 – utwórz darmowe konto na k6 cloud: Zarejestruj się
+### Rejestracja kont:
 
-Reserved – utwórz konto na Reserved (wystarczy podstawowa rejestracja).
+- **Grafana Cloud k6** - utwórz darmowe konto na k6 cloud: https://grafana.com/products/cloud/k6/
 
-Weryfikacja środowiska
-k6
+- **Reserved** - utwórz konto na Reserved - https://www.reserved.com/gb/en/ (wystarczy podstawowa rejestracja)
 
-Wpisz w konsoli: k6 i upewnij się, że wyświetlają się informacje o dostępnych komendach k6.
-Docker
+### Weryfikacja środowiska
+- **k6**
+	- Wpisz w konsoli: k6 i upewnij się, że wyświetlają się informacje o dostępnych komendach k6.
+- **Docker**
+	- Wpisz w konsoli: docker -v i upewnij się, że wyświetlana jest informacja o zainstalowanej wersji Dockera.
+	
+- Pobierz obrazy Dockera za pomocą następujących komend:
+	-   docker pull grafana/grafana
+	-   docker pull influxdb:1.8
+   
+ - Sklonuj repozytorium:
+   - git clone https://github.com/tklepacki/k6-workshop.git
+   - Przejdź do folderu repozytorium i upewnij się, że projekt został pobrany.
 
-Wpisz w konsoli: docker -v i upewnij się, że wyświetlana jest informacja o zainstalowanej wersji Dockera.
-Pobierz obrazy Dockera za pomocą następujących komend:
+- Otwórz Visual Studio Code -> Plik -> Otwórz folder (wybierz sklonowany folder projektu).
+  - Upewnij się, że wszystkie pliki projektu są widoczne w eksploratorze plików VSC.
 
-docker pull grafana/grafana
-docker pull influxdb:1.8
-Sklonuj repozytorium:
+## Notatki
+Google Docs: [https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing](https://docs.google.com/document/d/1seoGdGYMqO7gnHAoMI2hwYhK9yTIo3c4flpdJWXZvag/edit?usp=sharing)
 
-git clone https://github.com/tklepacki/k6-workshop.git
-Przejdź do folderu repozytorium i upewnij się, że projekt został pobrany.
-Otwórz Visual Studio Code -> Plik -> Otwórz folder (wybierz sklonowany folder projektu).
-
-Upewnij się, że wszystkie pliki projektu są widoczne w eksploratorze plików VSC.
-Uwagi
-Dokument Google: Kliknij tutaj
-
-W razie problemów
-Skontaktuj się ze mną pod adresem e-mail: t.klepacki@wp.pl
+## W razie problemów
+Skontaktuj się ze mną pod adresem e-mail: *t.klepacki@wp.pl*
