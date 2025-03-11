@@ -1,21 +1,22 @@
-Wprowadzenie
+## Wprowadzenie
+
 Drogi Uczestniku,
 
 Cieszę się, że zdecydowałeś się wziąć udział w warsztatach :)
 
 Aby zweryfikować środowisko programistyczne, upewnij się, że spełniasz poniższe wymagania dotyczące narzędzi (Wymagania).
 
-Wymagania
-Narzędzia
+##Wymagania
+###Narzędzia
 Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lub 11) lub MacOS. Zainstaluj następujące oprogramowanie:
 
-Visual Studio Code - Pobierz
+- **Visual Studio Code** - https://code.visualstudio.com/Download
 
-k6 - Pobierz
+- **k6** - https://dl.k6.io/msi/k6-latest-amd64.msi
+  
+- **Docker** - https://docs.docker.com/docker-for-windows/install/
 
-Docker - Pobierz i zainstaluj
-
-Przeglądarkę Chrome lub Firefox w najnowszej wersji
+- Przeglądarkę **Chrome** lub **Firefox** w najnowszej wersji
 
 Wtyczkę Grafana k6 Browser Recorder:
 
