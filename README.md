@@ -21,8 +21,9 @@ Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lu
 
 - Wtyczkę **Grafana k6 Browser Recorder**:
   - **Chrome**: https://chromewebstore.google.com/detail/grafana-k6-browser-record/fbanjfonbcedhifbgikmjelkkckhhidl
-	or
-	- **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
+  lub
+  - **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
+
 - **GIT** - https://git-scm.com/download/win
 UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz opcję: "Use Git and optional Unix tools from the Windows Command Prompt" (ostatni przycisk radiowy).
 
