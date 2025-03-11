@@ -39,15 +39,15 @@ UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz op
 - **Docker**
 	- Wpisz w konsoli: docker -v i upewnij się, że wyświetlana jest informacja o zainstalowanej wersji Dockera.
 	
-- Pobierz obrazy Dockera za pomocą następujących komend:
+- **Pobierz obrazy Dockera za pomocą następujących komend:**
 	-   docker pull grafana/grafana
 	-   docker pull influxdb:1.8
    
- - Sklonuj repozytorium:
+ - **Sklonuj repozytorium:**
    - git clone https://github.com/tklepacki/k6-workshop.git
    - Przejdź do folderu repozytorium i upewnij się, że projekt został pobrany.
 
-- Otwórz Visual Studio Code -> Plik -> Otwórz folder (wybierz sklonowany folder projektu).
+- **Otwórz Visual Studio Code -> Plik -> Otwórz folder (wybierz sklonowany folder projektu).**
   - Upewnij się, że wszystkie pliki projektu są widoczne w eksploratorze plików VSC.
 
 ## Notatki
