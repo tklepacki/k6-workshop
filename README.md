@@ -4,7 +4,7 @@ Drogi Uczestniku,
 
 Cieszę się, że zdecydowałeś się wziąć udział w warsztatach :)
 
-Aby zweryfikować środowisko programistyczne, upewnij się, że spełniasz poniższe wymagania dotyczące narzędzi (Wymagania).
+Aby zweryfikować środowisko programistyczne, upewnij się, że spełniasz poniższe wymagania dotyczące narzędzi (_Wymagania_).
 
 ## Wymagania
 ### Narzędzia
