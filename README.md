@@ -25,7 +25,7 @@ Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lu
   - **FireFox**: https://addons.mozilla.org/en-US/firefox/addon/grafana-k6-browser-recorder/
 
 - **GIT** - https://git-scm.com/download/win
-UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz opcję: "Use Git and optional Unix tools from the Windows Command Prompt" (ostatni przycisk radiowy).
+UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz opcję: "Use Git and optional Unix tools from the Windows Command Prompt" (ostatni przycisk).
 
 ### Rejestracja kont:
 
