@@ -12,11 +12,14 @@ Na warsztaty przybądź zaopatrzony w laptopa – najlepiej z systemem Windows. 
 
 Zainstaluj następujące oprogramowanie:
 
-- **Visual Studio Code** - https://code.visualstudio.com/Download
+- **Visual Studio Code** - https://code.visualstudio.com/download
 
 - **k6** - https://dl.k6.io/msi/k6-latest-amd64.msi
   
-- **Docker** - https://docs.docker.com/docker-for-windows/install/
+- **Docker**:
+  - https://docs.docker.com/install/linux/docker-ce/ubuntu/ - Linux
+  - https://docs.docker.com/docker-for-windows/install/ - Windows
+  - https://docs.docker.com/docker-for-mac/install/ - Mac
 
 - Przeglądarkę **Chrome** lub **Firefox** w najnowszej wersji
 
@@ -46,14 +49,12 @@ UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz op
 	-   docker pull influxdb:1.8
    
  - **Sklonuj repozytorium:**
-   - git clone https://github.com/tklepacki/k6-workshop.git
-   - Przejdź do folderu repozytorium i upewnij się, że projekt został pobrany.
+   - Utwórz fork repozytorium: https://github.com/tklepacki/k6-workshop.git na swoim prywatnym koncie GITHub. Jeśli nie masz konta na GitHub, utwórz go wcześniej.
+   - Sklonuj sforkowane repozytorium (ze swojego prywatnego konta)
+   - Wejdź do folderu z repozytorium i upewnij się, że projekt został pobrany.
 
 - **Otwórz Visual Studio Code -> Plik -> Otwórz folder (wybierz sklonowany folder projektu).**
   - Upewnij się, że wszystkie pliki projektu są widoczne w eksploratorze plików VSC.
 
-## Notatki
-Google Docs: [https://docs.google.com/document/d/1RqUe1DkDPB2K4awu-X7C8339D3F7fzcSs3kid5S84Uc/edit?usp=sharing](https://docs.google.com/document/d/1seoGdGYMqO7gnHAoMI2hwYhK9yTIo3c4flpdJWXZvag/edit?usp=sharing)
-
 ## W razie problemów
-Skontaktuj się ze mną pod adresem e-mail: *t.klepacki@wp.pl*
+W razie jakichkolwiek pytań lub problemów z wykonaniem instrukcji pisz na mój adres e-mail: *t.klepacki@wp.pl*
