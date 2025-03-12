@@ -42,11 +42,11 @@ UWAGA: Podczas instalacji, w oknie "Adjusting your PATH environment", wybierz op
 - **k6**
 	- Wpisz w konsoli: k6 i upewnij się, że wyświetlają się informacje o dostępnych komendach k6.
 - **Docker**
-	- Wpisz w konsoli: docker -v i upewnij się, że wyświetlana jest informacja o zainstalowanej wersji Dockera.
+	- Wpisz w konsoli: `docker -v` i upewnij się, że wyświetlana jest informacja o zainstalowanej wersji Dockera.
 	
 - **Pobierz obrazy Dockera za pomocą następujących komend:**
-	-   docker pull grafana/grafana
-	-   docker pull influxdb:1.8
+	-   `docker pull grafana/grafana`
+	-   `docker pull influxdb:1.8`
    
  - **Sklonuj repozytorium:**
    - Utwórz fork repozytorium: https://github.com/tklepacki/k6-workshop.git na swoim prywatnym koncie GITHub. Jeśli nie masz konta na GitHub, utwórz go wcześniej.
