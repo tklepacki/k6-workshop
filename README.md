@@ -8,7 +8,9 @@ Aby zweryfikować środowisko programistyczne, upewnij się, że spełniasz poni
 
 ## Wymagania
 ### Narzędzia
-Przygotuj komputer/laptop z systemem operacyjnym Windows (zalecany Windows 10 lub 11) lub MacOS. Zainstaluj następujące oprogramowanie:
+Na warsztaty przybądź zaopatrzony w laptopa – najlepiej z systemem Windows. Upewnij się, iż laptop nie jest obwarowany, żadnym blokadami, typu brak uprawnień do instalacji narzędzi, ograniczenia dostępu do sieci (VPN) itp. 
+
+Zainstaluj następujące oprogramowanie:
 
 - **Visual Studio Code** - https://code.visualstudio.com/Download
 
