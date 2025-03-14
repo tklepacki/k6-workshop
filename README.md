@@ -6,7 +6,6 @@ Dear Participant,
 I'm glad you've decided to take part in the workshop :)
 
 To verify the development environment, please make sure you meet the following tool requirements (_Requirements_).
-
 ## Requirements
 
 ### Tools
